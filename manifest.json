@@ -4,9 +4,11 @@
     "version": "1.0",
     "description": "Switch between RTL and LTR for Notion.",
     "permissions": [
+        "scripting",
+        "tabs",
         "activeTab"
     ],
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_icon": {
             "16": "icons/icon-16.png",

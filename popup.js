@@ -1,28 +1,26 @@
 let isRtl = false;
 
-document.getElementById("toggleButton").addEventListener("click", function () {
-    // التبديل بين RTL و LTR
+document.getElementById("toggleButton").addEventListener("click", () => {
     isRtl = !isRtl;
-    if (isRtl) {
-        // إضافة خاصية direction: rtl لجميع العناصر التي تحتوي على class "layout-content"
-        chrome.tabs.executeScript({
-            code: `
-                const elements = document.querySelectorAll('.layout-content');
-                elements.forEach(el => el.style.direction = 'rtl');
-            `
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        const tabId = tabs[0].id;
+
+        chrome.scripting.executeScript({
+            target: { tabId: tabId },
+            func: setDirection,
+            args: [isRtl]
         });
-    } else {
-        // إزالة خاصية direction أو تعيينها إلى ltr
-        chrome.tabs.executeScript({
-            code: `
-                const elements = document.querySelectorAll('.layout-content');
-                elements.forEach(el => el.style.direction = 'ltr');
-            `
-        });
-    }
+    });
 });
 
-// document.getElementById("payButton").addEventListener("click", function () {
-//     // يمكنك دمج نظام الدفع هنا
-//     alert("تم الدفع بنجاح! يمكنك الآن استخدام كل الميزات.");
-// });
+function setDirection(isRtl) {
+    const elements = document.querySelectorAll(".layout-content, .main-container");
+
+    elements.forEach(el => {
+        el.style.direction = isRtl ? "rtl" : "ltr";
+        console.log(el);
+    });
+
+    console.log("Direction applied to multiple elements:", isRtl ? "rtl" : "ltr");
+}
