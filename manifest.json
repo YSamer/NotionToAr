@@ -4,6 +4,7 @@
     "version": "1.0",
     "description": "Switch between RTL and LTR for Notion.",
     "permissions": [
+        "storage",
         "scripting",
         "tabs",
         "activeTab"
@@ -24,7 +25,7 @@
         "512": "icons/icon-512.png"
     },
     "host_permissions": [
-        "http://*/*",
-        "https://*/*"
+        "https://www.notion.so/*",
+        "https://notion.so/*"
     ]
 }

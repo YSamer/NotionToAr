@@ -3,21 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notion RTL Toggle</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            width: 200px;
-            padding: 10px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 300px;
+            margin: 0;
+            color: #333;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
         }
 
         button {
-            padding: 10px;
-            width: 100%;
+            background-color: #4A90E2;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
-            font-size: 14px;
-            margin-top: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #357ABD;
         }
     </style>
 </head>
@@ -25,7 +44,7 @@
 <body>
     <h3>Notion RTL Toggle</h3>
     <button id="toggleButton">Toggle Direction</button>
-    <!-- <button id="payButton">Upgrade to Paid</button> -->
+
     <script src="popup.js"></script>
 </body>
 

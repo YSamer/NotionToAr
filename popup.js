@@ -1,18 +1,30 @@
 let isRtl = false;
 
-document.getElementById("toggleButton").addEventListener("click", () => {
-    isRtl = !isRtl;
+// عند تحميل popup
+document.addEventListener("DOMContentLoaded", () => {
+    chrome.storage.local.get(["isRtl"], (result) => {
+        isRtl = result.isRtl || false;
+        updateButtonText();
+    });
 
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        const tabId = tabs[0].id;
+    document.getElementById("toggleButton").addEventListener("click", () => {
+        isRtl = !isRtl;
+        chrome.storage.local.set({ isRtl });
+        updateButtonText();
 
-        chrome.scripting.executeScript({
-            target: { tabId: tabId },
-            func: setDirection,
-            args: [isRtl]
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            chrome.scripting.executeScript({
+                target: { tabId: tabs[0].id },
+                func: setDirection,
+                args: [isRtl],
+            });
         });
     });
 });
+
+function updateButtonText() {
+    document.getElementById("toggleButton").innerText = isRtl ? "تحويل إلى LTR" : "تحويل إلى RTL";
+}
 
 function setDirection(isRtl) {
     const elements = document.querySelectorAll(".layout-content, .main-container");
