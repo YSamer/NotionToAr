@@ -1,0 +1,47 @@
+Privacy Policy
+At Notion RTL, we are committed to protecting your privacy and safeguarding your personal information. This Privacy Policy explains how we collect, use, and protect the data you provide when using our extension.
+
+1. Information We Collect
+Information you provide: such as your settings, preferences, or any data you enter within the extension.
+
+Technical information: such as IP address, browser type, and pages visited within the extension (if collected).
+
+2. How We Use Your Information
+To improve the extension's performance and provide a better user experience.
+
+To save your preferences and settings for seamless usage.
+
+To analyze usage and improve future services.
+
+3. Sharing Your Information
+We do not share your information with third parties, nor do we sell or rent your data.
+
+4. Data Protection
+We take appropriate technical and organizational measures to protect your data from unauthorized access, alteration, or disclosure.
+
+5. Cookies
+The extension may use cookies to enhance your experience. You can disable cookies via your browser settings if you prefer.
+
+6. Your Rights
+You may request access to the personal data we have collected about you.
+
+You can request corrections or deletions of your data.
+
+You can opt out of any related services.
+
+7. Changes to This Policy
+We may update this policy from time to time. Significant changes will be communicated through the extension or via email.
+
+8. Contact Us
+If you have any questions about this Privacy Policy, please contact us at:
+[Your Email or Contact Link]
+
+Notes for Notion RTL:
+In Notion, you can set the page or block to Right-to-Left (RTL) text direction by:
+
+Selecting the text block → Click the three dots menu → Choose Right-to-Left
+
+Or if your entire page is RTL, set the page language accordingly.
+
+This way, your English text can flow RTL if you want, or you can mix Arabic and English easily.
+
